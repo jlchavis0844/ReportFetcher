@@ -87,6 +87,7 @@ public class Main {
 			file.getParentFile().mkdirs();
 			bw = new BufferedWriter(new FileWriter(file));
 			bw.write(output);
+			bw.flush();
 			Files.copy(file.toPath(),new File(workDir + "\\currentRep.csv").toPath(), 
 					StandardCopyOption.REPLACE_EXISTING);
 			System.out.println("Saving to: " + file.getAbsolutePath());
